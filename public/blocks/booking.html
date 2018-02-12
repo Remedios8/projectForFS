@@ -1,0 +1,73 @@
+<script>
+    (function ($) {
+        var l = $('.mesta');
+
+        function Count_Mest() {
+            var z_mest = 0;
+            for (var i = 0; i < l.length; i++) {
+                if (l[i].style.background == 'darkcyan') {
+                    z_mest++;
+                }
+            }
+            return z_mest;
+        }
+
+        var number = [];
+        for (var i = 0; i < l.length; i++) {
+            l[i].onclick = function () {
+                if (this.style.background != 'darkcyan') {
+                    this.style.background = 'darkcyan';
+                    number.push('' + this.innerHTML);
+                    $('#count_').text('Reserved seats : ' + Count_Mest());
+                    $('#num_').text(number.join());
+                } else {
+                    this.style.background = 'silver';
+                    number.splice(number.indexOf('' + this.innerHTML), 1);
+                    $('#count_').text('Reserved seats : ' + Count_Mest());
+                    $('#num_').text(number.join());
+                }
+
+            }
+        }
+    })(jQuery);
+</script>
+<form id="bookingForm">
+    <div>Stage</div>
+    <div class="cinoteatr">
+        <div class="mesta">1</div>
+        <div class="mesta">2</div>
+        <div class="mesta">3</div>
+        <div class="mesta">4</div>
+        <div class="mesta">5</div>
+        <div class="mesta">6</div>
+        <div class="mesta">7</div>
+        <div class="mesta">8</div>
+        <div class="mesta">9</div>
+        <div class="mesta">10</div>
+        <div class="mesta">11</div>
+        <div class="mesta">12</div>
+        <div class="mesta">13</div>
+        <div class="mesta">14</div>
+        <div class="mesta">15</div>
+        <div class="mesta">16</div>
+        <div class="mesta">17</div>
+        <div class="mesta">18</div>
+        <div class="mesta">19</div>
+        <div class="mesta">20</div>
+    </div>
+    <div>
+        <div name="seats" id='count_'>Reserved seats : 0</div>
+        <span>Number : </span><span name="numbersOfSeats" id='num_'></span>
+    </div>
+    <div>
+        <input name="name" placeholder="Name" autofocus/>
+    </div>
+    <div>
+        <input name="email" type="email" placeholder="123@mail.com" required/>
+    </div>
+    <div>
+        <textarea name="comm" placeholder="Comments" style="resize: none"></textarea>
+    </div>
+    <input id="sendForm" type="submit" value="Submit">
+
+</form>

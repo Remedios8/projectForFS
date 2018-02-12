@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opera</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+<audio id="music"
+       src="../img/music.mp3"
+       autoplay loop>
+    Your browser does not support the <code>audio</code> element.
+</audio>
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div id="loading-object"></div>
+        </div>
+    </div>
+</div>
+<div class="firstScreen">
+    <div id="main">
+        <header class="header">
+            <h2>The Grand Opera House</h2>
+            <h3>Welcome!</h3>
+        </header>
+    </div>
+    <div>
+        <div class="nav">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/repertoire">Repertoire</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/booking">Booking</a></li>
+                <li style="float: right"><i class="material-icons">volume_up</i></li>
+            </ul>
+
+            <div id="navContent"></div>
+            <div class="back"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
