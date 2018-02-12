@@ -9,7 +9,7 @@
             top = $(this).scrollTop();
             if ((h_hght - top) <= h_nav) {
                 $('.nav').css('top', '0');
-                console.log(1);
+
             }
         });
 
@@ -48,7 +48,6 @@
                 shouldPushState = true;
                 page.url = $(this).attr("href");
                 loadPage();
-                console.log(page.url);
                 if (page.url != '/home') {
                     $('.header').css({'display': 'none'});
                     $('.nav').animate({
@@ -105,7 +104,6 @@
                 dataType: "html",
                 cache: false,
                 beforeSend: function () {
-                    console.log(page.url);
                     if (page.url != '/home') {
                         showLoading();
                     }
@@ -163,7 +161,6 @@
                 noBooking.text("You have to choose some seats below!");
                 form.prepend(noBooking);
             } else {
-                console.log($('#num_').innerHTML);
                 var formData = {};
                 form.serializeArray().map(function (field) {
                     formData[field.name] = field.value;
@@ -200,7 +197,6 @@
             form.serializeArray().map(function (field) {
                 formDataEmail[field.name] = field.value;
             });
-            console.log(formDataEmail);
             $.ajax({
                 url: "http://localhost:3000/subscribe",
                 dataType: "json",
