@@ -1,2 +1,2 @@
 # Project for FrontEnd School in NetCracker
-OperaHouse project
+Nodejs OperaHouse project
